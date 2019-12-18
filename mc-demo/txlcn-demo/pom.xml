@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mc-demo</artifactId>
+        <groupId>com.mc</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mc</groupId>
+    <artifactId>txlcn-demo</artifactId>
+    <description>txlcn-demo</description>
+    <modules>
+        <module>txlcn-demo-common</module>
+        <module>txlcn-demo-spring-service-a</module>
+        <module>txlcn-demo-spring-service-b</module>
+        <module>txlcn-demo-spring-service-c</module>
+    </modules>
+    <packaging>pom</packaging>
+
+
+</project>

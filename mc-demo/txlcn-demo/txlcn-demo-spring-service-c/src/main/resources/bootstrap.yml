@@ -1,0 +1,14 @@
+server:
+  port: 12003
+
+mc:
+  nacos:
+    server-addr: 192.168.66.20:8848
+
+spring:
+  application:
+    name: txlcn-demo-spring-service-c
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${mc.nacos.server-addr}

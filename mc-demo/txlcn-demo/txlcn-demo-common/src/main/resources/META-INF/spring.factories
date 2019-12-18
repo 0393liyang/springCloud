@@ -1,0 +1,1 @@
+orgorg.springframework.boot.autoconfigure.EnableAutoConfiguration=org.txlcn.demo.common.spring.FeignConfiguration
