@@ -8,6 +8,7 @@ import com.mc.common.model.*;
 import com.mc.user.service.ISysMenuService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -78,7 +79,8 @@ public class SysMenuController {
 
     @ApiOperation(value = "根据roleId获取对应的菜单")
     @GetMapping("/{roleId}/menus")
-    public List<Map<String, Object>> findMenusByRoleId(@PathVariable Long roleId) {
+    public List<Map<String, Object>> findMenusByRoleId(
+            @ApiParam(name="roleId", value="角色ID") @PathVariable Long roleId) {
         Set<Long> roleIds = new HashSet<>();
         roleIds.add(roleId);
         //获取该角色对应的菜单
