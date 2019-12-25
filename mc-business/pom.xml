@@ -17,6 +17,8 @@
     <modules>
         <module>user-center</module>
         <module>search-center</module>
+        <module>file-center</module>
+        <module>code-generator</module>
     </modules>
 
 </project>
