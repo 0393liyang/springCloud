@@ -48,14 +48,4 @@ public class DefaultMybatisPlusConfig {
         }
         return paginationInterceptor;
     }
-
-    /**
-     * 打印 sql，性能分析拦截器，不建议生产使用
-     * 设置 dev test 环境开启
-     */
-    @Bean
-    @Profile({"dev","test"})
-    public PerformanceInterceptor performanceInterceptor() {
-        return new PerformanceInterceptor();
-    }
 }
