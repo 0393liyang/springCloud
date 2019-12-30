@@ -11,11 +11,16 @@
 
     <groupId>com.mc</groupId>
     <artifactId>txlcn-demo</artifactId>
-    <description>txlcn-demo</description>
+    <description>txlcn分布式事务demo</description>
+    <packaging>pom</packaging>
     <modules>
+        <!-- 公共 -->
         <module>txlcn-demo-common</module>
+        <!-- 服务a -->
         <module>txlcn-demo-spring-service-a</module>
+        <!-- 服务b -->
         <module>txlcn-demo-spring-service-b</module>
+        <!-- 服务c -->
         <module>txlcn-demo-spring-service-c</module>
     </modules>
     <packaging>pom</packaging>

@@ -11,7 +11,8 @@
 
     <groupId>com.mc</groupId>
     <artifactId>txlcn-demo-common</artifactId>
-    <packaging>jar</packaging>
+    <name>demo-common</name>
+    <description>demo-common project for Spring Boot</description>
 
     <dependencies>
         <dependency>

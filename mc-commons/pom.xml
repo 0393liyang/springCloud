@@ -15,15 +15,14 @@
     <description>通用工具一级工程</description>
 
     <modules>
-        <module>mc-common-core</module>
-        <module>mc-log-spring-boot-starter</module>
+        <module>mc-redis-spring-boot-starter</module>
         <module>mc-common-spring-boot-starter</module>
         <module>mc-db-spring-boot-starter</module>
-        <module>mc-redis-spring-boot-starter</module>
-        <module>mc-auth-client-spring-boot-starter</module>
-        <module>mc-ribbon-spring-boot-starter</module>
-        <module>mc-sentinel-spring-boot-starter</module>
         <module>mc-swagger2-spring-boot-starter</module>
+        <module>mc-log-spring-boot-starter</module>
+        <module>mc-ribbon-spring-boot-starter</module>
+        <module>mc-auth-client-spring-boot-starter</module>
+        <module>mc-sentinel-spring-boot-starter</module>
+        <module>mc-common-core</module>
     </modules>
-
 </project>

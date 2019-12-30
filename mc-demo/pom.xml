@@ -13,6 +13,7 @@
     <artifactId>mc-demo</artifactId>
     <packaging>pom</packaging>
     <modules>
+    	<!-- txlcn分布式事务demo -->
         <module>txlcn-demo</module>
     </modules>
 
