@@ -8,6 +8,10 @@
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mc</groupId>
+    <artifactId>mc-config</artifactId>
+
     <packaging>jar</packaging>
     <description>配置中心</description>
     <dependencies>

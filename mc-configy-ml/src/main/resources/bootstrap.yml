@@ -1,0 +1,26 @@
+# bootstrap级别通用配置
+
+# spring-boot-actuator配置
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  # 默认开发环境
+  profiles:
+    active: dev
+  # 允许bean覆盖
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    # nacos(注册中心和配置中心)地址
+    nacos:
+      config:
+        file-extension: yml
+        refreshable-dataids: common.yml
+        shared-dataids: common.yml
+      server-addr: 192.168.66.20:8848

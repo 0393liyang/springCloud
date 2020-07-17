@@ -3,14 +3,12 @@ package com.mc.db.config;
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.parser.ISqlParserFilter;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantHandler;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 import com.mc.common.properties.TenantProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Profile;
 
 /**
  * [DefaultMybatisPlusConfig mybatis-plus配置]

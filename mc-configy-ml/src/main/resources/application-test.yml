@@ -1,0 +1,28 @@
+# 统一变量配置
+
+mc:
+  # 数据库配置
+  datasource:
+    ip: 192.168.28.131
+    password: 1q2w3e4r
+    username: root
+  # elasticsearch配置
+  elasticsearch:
+    cluster-name: my-es
+    cluster-nodes: 192.168.66.20
+  # fastDFS配置
+  fdfs:
+    trackerList: ${mc.fdfs.web-url}:22122
+    web-url: 192.168.66.20
+  # sentinel配置
+  sentinel:
+    dashboard: 192.168.66.20:6999
+  # 日志链路追踪
+  trace:
+    enable: true
+spring:
+  # redis配置
+  redis:
+    host: 192.168.66.20
+    port: 6379
+    timeout: 5000

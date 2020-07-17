@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>0.0.1</version>
 
-    <description>central platform</description>
+    <description>cp</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -17,15 +17,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>8</java.version>
         <commons-collections4.version>4.2</commons-collections4.version>
-        <fastjson.version>1.2.60</fastjson.version>
-	
-        <project.version>0.0.1</project.version>
-	
+        <fastjson.version>1.2.58</fastjson.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger.ui.version>1.8.7</swagger.ui.version>
         <swagger.mg.ui.version>1.0.6</swagger.mg.ui.version>
         <swagger.butler.version>2.0.1</swagger.butler.version>
-        <swagger.annotations.version>1.5.20</swagger.annotations.version>
+        <!--<swagger.annotations.version>1.5.20</swagger.annotations.version>-->
         <jjwt.version>0.9.1</jjwt.version>
         <druid-starter>1.1.10</druid-starter>
         <jasypt.version>1.14</jasypt.version>
@@ -61,7 +58,7 @@
         <sonar.exclusions>zlt-job/**/*, zlt-register/**/*, zlt-web/**/*</sonar.exclusions>
         <docker.baseImage>openjdk:8-jre-alpine</docker.baseImage>
         <docker.volumes>/tmp</docker.volumes>
-        <docker.image.prefix>hub.mc.com:8080/microservices-platform</docker.image.prefix>
+        <docker.image.prefix>hub.mc.com:8080/cp</docker.image.prefix>
         <docker.java.security.egd>-Djava.security.egd=file:/dev/./urandom</docker.java.security.egd>
         <docker.java.opts>-Xms128m -Xmx128m</docker.java.opts>
     </properties>
@@ -153,9 +150,9 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mc</groupId>
-                <artifactId>search-client</artifactId>
-                <version>${project.version}</version>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
             <!-- druid 官方 starter -->
             <dependency>
@@ -163,7 +160,6 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-starter}</version>
             </dependency>
-
             <!-- mybatis-plus start -->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -208,11 +204,11 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
                 <version>${swagger.annotations.version}</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>swagger-bootstrap-ui</artifactId>
@@ -223,11 +219,11 @@
                 <artifactId>swagger-mg-ui</artifactId>
                 <version>${swagger.mg.ui.version}</version>
             </dependency>
-            <!--<dependency>
+            <dependency>
                 <groupId>com.github.zlt2000</groupId>
                 <artifactId>swagger-butler-core</artifactId>
                 <version>${swagger.butler.version}</version>
-            </dependency>-->
+            </dependency>
             <!-- 验证码生成工具 -->
             <dependency>
                 <groupId>com.github.whvcse</groupId>
@@ -425,24 +421,25 @@
     <modules>
         <!-- 公共 -->
         <module>mc-commons</module>
-	<!-- 认证 -->
-	<module>mc-uaa</module>
-	<!-- 网关 -->
-	<module>mc-gateway</module>
-	<!-- 业务 -->
-	<module>mc-business</module>
-	<!-- 前端 -->
-	<module>mc-web</module>
-	<!-- 任务 -->
-	<module>mc-job</module>
-	<!-- 监控 -->
-	<module>mc-monitor</module>
-	<!-- 事务 -->
-	<module>mc-transaction</module>
+        <!-- 认证 -->
+        <module>mc-uaa</module>
+        <!-- 网关 -->
+        <module>mc-gateway</module>
+        <!-- 业务 -->
+        <module>mc-business</module>
+        <!-- 前端 -->
+        <module>mc-web</module>
+        <!-- 任务 -->
+        <!--<module>mc-job</module>-->
+        <!-- 监控 -->
+        <module>mc-monitor</module>
+        <!-- 事务 -->
+        <module>mc-transaction</module>
         <!--配置-->
         <module>mc-config</module>
-	<!-- demo -->
-	<module>mc-demo</module>
+        <!-- demo -->
+        <module>mc-demo</module>
+        <module>mc-configy-ml</module>
     </modules>
 
     <licenses>

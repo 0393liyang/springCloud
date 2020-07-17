@@ -23,7 +23,6 @@
         <!-- 服务c -->
         <module>txlcn-demo-spring-service-c</module>
     </modules>
-    <packaging>pom</packaging>
 
 
 </project>

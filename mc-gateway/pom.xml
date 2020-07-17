@@ -14,6 +14,7 @@
     <description>api网关一级工程</description>
     <modules>
         <module>sc-gateway</module>
+        <module>zuul-gateway</module>
     </modules>
     <packaging>pom</packaging>
 

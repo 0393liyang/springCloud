@@ -1,0 +1,111 @@
+##### feign配置
+feign:
+  client:
+    config:
+      feignName:
+        connectTimeout: 30000
+        readTimeout: 30000
+  compression:
+    request:
+      ## 开启Feign请求响应压缩
+      enabled: true
+      ## 配置压缩文档类型及最小压缩的文档大小
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+  httpclient:
+    enabled: false
+    max-connections: 1000
+    max-connections-per-route: 100
+  hystrix:
+    enabled: false
+  okhttp:
+    enabled: true
+  sentinel:
+    enabled: true
+##### mybatis-plus配置
+mybatis-plus:
+  configuration:
+    # 原生配置
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      #字段策略 IGNORED:"忽略判断",NOT_NULL:"非 NULL 判断"),NOT_EMPTY:"非空判断"
+      field-strategy: NOT_NULL
+      #逻辑删除配置
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+ribbon:
+  ## 请求连接的超时时间 默认1秒，单位ms
+  ConnectTimeout: 30000
+  ## 对所有操作请求都进行重试,不配置这个MaxAutoRetries不起作用 默认false
+  OkToRetryOnAllOperations: true
+  ## 对当前实例的重试次数 默认0
+  MaxAutoRetries: 1
+  ## 切换实例的重试次数 默认1
+  MaxAutoRetriesNextServer: 0
+  ## 请求处理的超时时间 默认1秒，单位ms
+  ReadTimeout: 30000
+  ## 从注册中心刷新servelist的时间 默认30秒，单位ms
+  ServerListRefreshInterval: 15000
+spring:
+  cloud:
+    ##### sentinel配置
+    sentinel:
+      eager: true
+      transport:
+        dashboard: ${zlt.sentinel.dashboard}
+  datasource:
+    druid:
+      filters: stat,wall
+      #连接池配置(通常来说，只需要修改initialSize、minIdle、maxActive
+      initial-size: 10
+      max-active: 500
+      min-idle: 10
+      max-pool-prepared-statement-per-connection-size: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      #打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      # StatViewServlet配置
+      #展示Druid的统计信息,StatViewServlet的用途包括：1.提供监控信息展示的html页面2.提供监控信息的JSON API
+      stat-view-servlet:
+        #是否启用StatViewServlet默认值true
+        enabled: true
+        #允许清空统计数据
+        login-password: admin
+        login-username: admin
+        reset-enable: true
+        #根据配置中的url-pattern来访问内置监控页面，如果是上面的配置，内置监控页面的首页是/druid/index.html例如：http://127.0.0.1:9000/druid/index.html
+        url-pattern: /druid/*
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      validation-query: SELECT 'x'
+      # WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      #是否启用StatFilter默认值true
+      web-stat-filter:
+        enabled: true
+        exclusions: '"*.js , *.gif ,*.jpg ,*.png ,*.css ,*.ico , /druid/*"'
+        profile-enable: true
+        session-stat-enable: false
+        session-stat-max-count: 1000
+        url-pattern: /*
+  ##### redis配置
+  redis:
+    lettuce:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最小空闲连接
+        min-idle: 0

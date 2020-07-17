@@ -1,0 +1,36 @@
+#统一变量配置
+
+mc:
+  # 数据库配置
+  datasource:
+    ip: 192.168.66.20
+    password: 1qazxsw2#
+    username: root
+  # elasticsearch配置
+  elasticsearch:
+    cluster-name: my-es
+    cluster-nodes: 192.168.66.20
+  # fastDFS配置
+  fdfs:
+    trackerList: ${mc.fdfs.web-url}:22122
+    web-url: 192.168.66.20
+  # 负载均衡隔离(version隔离，只适用于开发环境)
+  ribbon:
+    isolation:
+      enabled: true
+  # sentinel配置
+  sentinel:
+    dashboard: 192.168.66.20:6999
+  # 日志链路追踪
+  trace:
+    enable: true
+# mybatis-plus打印完整sql(只适用于开发环境)
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+spring:
+  # redis配置
+  redis:
+    host: 192.168.66.20
+    port: 6379
+    timeout: 5000
