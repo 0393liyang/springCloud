@@ -9,21 +9,21 @@ mc:
   # elasticsearch配置
   elasticsearch:
     cluster-name: my-es
-    cluster-nodes: 192.168.66.20
+    cluster-nodes: 192.168.66.241
   # fastDFS配置
   fdfs:
     trackerList: ${mc.fdfs.web-url}:22122
-    web-url: 192.168.66.20
+    web-url: 192.168.66.241
   # sentinel配置
   sentinel:
-    dashboard: 192.168.66.20:6999
+    dashboard: 192.168.66.241:26379
   # 日志链路追踪
   trace:
     enable: true
 spring:
   # redis配置
   redis:
-    password: 1q2w3e4r
+    password: FV8aGkVS4PtE8PyHHtMA
     sentinel:
       master: mymaster
-      nodes: 192.168.66.20:26380,192.168.28.131:26381
+      nodes: 192.168.66.241:26380,192.168.66.241:26379

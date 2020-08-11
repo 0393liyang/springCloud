@@ -23,4 +23,4 @@ spring:
         file-extension: yml
         refreshable-dataids: common.yml
         shared-dataids: common.yml
-      server-addr: 192.168.66.20:8848
+      server-addr: 192.168.66.241:8848
